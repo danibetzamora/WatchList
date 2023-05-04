@@ -1,5 +1,6 @@
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ChangePasswordComponent } from './pages/change-password/change-password.component';
 import { FilmsComponent } from './pages/films/films.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -10,6 +11,10 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { VideosComponent } from './pages/videos/videos.component';
 
 const routes: Routes = [
+  {
+    path: 'change-password',
+    component: ChangePasswordComponent
+  },
   {
     path: 'films',
     component: FilmsComponent

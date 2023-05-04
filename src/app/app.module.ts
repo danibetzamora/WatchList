@@ -11,6 +11,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { SeriesComponent } from './pages/series/series.component';
 import { VideosComponent } from './pages/videos/videos.component';
 import { MyListComponent } from './pages/my-list/my-list.component';
+import { ChangePasswordComponent } from './pages/change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MyListComponent } from './pages/my-list/my-list.component';
     ProfileComponent,
     SeriesComponent,
     VideosComponent,
-    MyListComponent
+    MyListComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,

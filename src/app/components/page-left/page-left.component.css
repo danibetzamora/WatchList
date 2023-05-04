@@ -1,43 +1,58 @@
 *{
     font-family: "Bebas Neue", sans-serif;
   }
-  
+
   header {
     position:absolute;
     width: 20%;
-    left: 0;
-    top: 0;
+    left: 0%;
+    top: 0%;
     height: 100%;
     overflow: hidden;
     background-color: #153E76;
   }
 
   header > nav {
-    top:20%;
+    top:22%;
     position: absolute;
   }
 
   header > nav ul {
     list-style:none;
+    text-align: center;
   }
 
   .logo{
     position: absolute;
-    top: 10%;  
-    width: 200px;
+    top: 7%;  
+    width: 140px;
     height: 140px;
-    left: -5%;
+    left: 0px;
     right: 0;
     margin: auto;
   }
 
   .search {
-    margin-top: 50%;
-    border: 2px solid #000000;
-    border-radius: 10px;
-    
+    margin-top: 50%; 
   }
 
+  .search input {
+    border: 2px solid #000000;
+    border-radius: 10px;
+    width: max-content;
+    height: 20px;
+  }
+
+  .button-browse, .button-my-list, .button-profile, .button-log-out {
+    background: transparent;
+    border: none;
+    color: white;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    margin-top: 20%;
+  }
+/*
   .button-browse, .button-my-list, .button-profile, .button-log-out {
     background: transparent;
     position: absolute;
@@ -50,7 +65,6 @@
     line-height: 25px;
     text-align: center;
   }
-
   .button-browse {
     margin-top: 40%;
   }
@@ -62,10 +76,11 @@
   .button-profile {
     margin-top: 80%;
   }
-
+  
   .button-log-out {
     margin-top: 100%;
   }
+  */
 
   .button-browse:hover, .button-my-list:hover, .button-profile:hover, .button-log-out:hover{
     cursor: pointer;
