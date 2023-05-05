@@ -32,7 +32,7 @@
 
 .data input {
     border-radius: 10px;
-    border-color: #1468C5;
+    border-color: #153E76;
     height: 20px;
     width: max-content;
     padding-right: 30px;
@@ -52,6 +52,7 @@
     font-size: 18px;
     font-weight: bold;
     margin-top: 4%;
+    margin-bottom: 3%;
 }
 
 .change-passwd:hoverr {

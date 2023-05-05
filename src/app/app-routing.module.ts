@@ -4,6 +4,7 @@ import { ChangePasswordComponent } from './pages/change-password/change-password
 import { FilmsComponent } from './pages/films/films.component';
 import { FilmsListPendingComponent } from './pages/films-list-pending/films-list-pending.component';
 import { FilmsListViewComponent } from './pages/films-list-view/films-list-view.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { MyListComponent } from './pages/my-list/my-list.component';
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path: 'films-list-view',
     component: FilmsListViewComponent
+  },
+  {
+    path: 'forgot-password',
+    component: ForgotPasswordComponent
   },
   {
     path: 'home',
