@@ -21,6 +21,11 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { VideosComponent } from './pages/videos/videos.component';
 import { VideosListPendingComponent } from './pages/videos-list-pending/videos-list-pending.component';
 import { VideosListViewComponent } from './pages/videos-list-view/videos-list-view.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -47,7 +52,11 @@ import { VideosListViewComponent } from './pages/videos-list-view/videos-list-vi
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage())
   ],
   providers: [],
   bootstrap: [AppComponent]
