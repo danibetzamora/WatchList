@@ -1,9 +1,13 @@
-<div class="app">
-    <div class="left">
+<div class="app" *ngIf="!isLoginPage">
+    <div class="app-nav">
         <app-page-left></app-page-left>
     </div>
     
-    <div class="main">
+    <div class="app-pages">
         <router-outlet></router-outlet>
     </div>
+</div>
+
+<div class="app-login" *ngIf="isLoginPage">
+    <router-outlet></router-outlet>
 </div>
