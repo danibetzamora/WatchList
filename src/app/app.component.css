@@ -1,0 +1,24 @@
+.app {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.app-nav {
+    width: 16%;
+    min-height: 100%;
+}
+
+.app-pages {
+    width: 84%;
+    height: 100%;
+    margin-top: 2.5em;
+    margin-left: 12em;
+    margin-right: 9em;
+}
+
+.app-login {
+    width: 100vw;
+    height: 100vh;
+}

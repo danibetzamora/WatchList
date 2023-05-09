@@ -1,43 +1,59 @@
 header {
-  position:fixed;
-  width: 20%;
-  left: 0%;
-  top: 0%;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 16%;
   height: 100%;
-  overflow: hidden;
+  gap: 2em;
   background-color: #153E76;
 }
 
-header > nav {
-  top:22%;
-  position: absolute;
+.logo-div {
+  margin-top: 2.5em;
 }
 
-header > nav ul {
+.logo {
+  width: 150px;
+  height: 155px;
+}
+
+nav {
+  height: 40%;
+}
+
+.menu-list {
+  height: 100%;
   list-style:none;
   text-align: center;
-}  
-
-.logo{
-  position: absolute;
-  top: 7%;  
-  width: 140px;
-  height: 140px;
-  left: 0px;
-  right: 0;
-  margin: auto;
-}  
-
-.search {
-  margin-top: 50%; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
 }  
 
 .search input {
-  border: 2px solid #000000;
-  border-radius: 10px;
-  width: max-content;
-  height: 20px;
+  border: 3px solid #000000;
+  border-radius: 16px;
+  width: 70%;
+  padding: 1em;
+  text-align: center;
+  font-weight: bold;
+  color: #000000;
 }  
+
+button:hover {
+  cursor: pointer;
+}
+
+button:hover {
+  width: 100%;
+  background-color: #FFFF;
+  border-radius: 12px;
+  color: #000000;
+}
 
 .button-browse, .button-my-list, .button-profile, .button-log-out {
   background: transparent;
@@ -46,9 +62,4 @@ header > nav ul {
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
-  margin-top: 20%;
 }
-  
-.button-browse:hover, .button-my-list:hover, .button-profile:hover, .button-log-out:hover{
-  cursor: pointer;
-}  
