@@ -39,6 +39,7 @@ a {
     align-items: center;
     padding: 0;
     margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 .items-list > li {
@@ -56,6 +57,7 @@ a {
 .item-image {
     height: 210px;
     width: 160px;
+    border-radius: 8px;
 }
 
 .item-title {
@@ -72,5 +74,4 @@ a {
     color: #0151c2;
     width: 100%;
     border-radius: 12px;
-    
-  }
+}
