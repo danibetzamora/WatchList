@@ -18,8 +18,14 @@ import { VideosComponent } from './pages/videos/videos.component';
 import { VideosListPendingComponent } from './pages/videos-list-pending/videos-list-pending.component';
 import { VideosListViewComponent } from './pages/videos-list-view/videos-list-view.component';
 import { FilmInformationComponent } from './pages/film-information/film-information.component';
+import { SeriesInformationComponent } from './pages/series-information/series-information.component';
+import { VideoInformationComponent } from './pages/video-information/video-information.component';
 
 const routes: Routes = [
+  //This is only to test without authentication implemented
+  { path: '', 
+    component: HomeComponent 
+  },
   {
     path: 'change-password',
     component: ChangePasswordComponent
@@ -65,6 +71,10 @@ const routes: Routes = [
     component: SeriesComponent
   },
   {
+    path: 'series-information/:id',
+    component: SeriesInformationComponent
+  },
+  {
     path: 'series-list-pending',
     component: SeriesListPendingComponent
   },
@@ -83,6 +93,10 @@ const routes: Routes = [
   {
     path: 'videos',
     component: VideosComponent
+  },
+  {
+    path: 'video-information/:id',
+    component: VideoInformationComponent
   },
   {
     path: 'videos-list-pending',

@@ -97,5 +97,4 @@ export class HomeComponent implements OnInit {
       ) as Video[]
     );
   }
-
 }

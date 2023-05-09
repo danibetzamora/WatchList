@@ -28,7 +28,7 @@
                 <li *ngFor="let series_item of series.slice(0, 5)">
                     <div class="image-title">
                         <img src="{{ series_item.image }}" class="item-image">
-                        <p class="item-title" [routerLink]="'/film-information/' + series_item.id"><b>{{ series_item.title }}</b></p>
+                        <p class="item-title" [routerLink]="'/series-information/' + series_item.id"><b>{{ series_item.title }}</b></p>
                     </div>
                 </li>
             </ul>
@@ -46,7 +46,7 @@
                 <li *ngFor="let video of videos.slice(0, 5)">
                     <div class="image-title">
                         <img src="{{ video.image }}" class="item-image">
-                        <p class="item-title" [routerLink]="'/film-information/' + video.id"><b>{{ video.title }}</b></p>
+                        <p class="item-title" [routerLink]="'/video-information/' + video.id"><b>{{ video.title }}</b></p>
                     </div>
                 </li>
             </ul>

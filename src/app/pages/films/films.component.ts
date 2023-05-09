@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Film } from "../../../services/film.model";
 import { FilmService } from "../../../services/film.service";
-import { ActivatedRoute, ParamMap } from '@angular/router'
 
 @Component({
   selector: 'app-films',
@@ -9,24 +8,20 @@ import { ActivatedRoute, ParamMap } from '@angular/router'
   styleUrls: ['./films.component.css']
 })
 
-export class FilmsComponent { }
-/*
-export class FilmsComponent implements OnInit {
-  id: string = '';
-  film: Film = new Film;
+export class FilmsComponent implements OnInit { 
+  films: Film[] = [];
 
-  constructor(private route: ActivatedRoute, private filmService: FilmService) {}
+  constructor(private filmService: FilmService) {}
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe((params: ParamMap) => {
-      this.id = params.get('id') ?? '';
-      this.getFilm();
-    });
+    this.getFilms();
   }
 
-  public getFilm() {
-    this.filmService.getDocument(this.id).subscribe(
-      (res: any) => this.film = ({...res.data(), 'id': res.id}) as Film
+  public getFilms(){
+    this.filmService.getList().subscribe(
+      (res: any) => this.films = res.map(
+        (item: any) => ({ ...item.data(), 'id': item.id})
+      ) as Film[]
     );
   }
-*/
+}

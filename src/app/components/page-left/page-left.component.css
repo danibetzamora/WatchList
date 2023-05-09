@@ -37,7 +37,7 @@ nav {
 .search input {
   border: 3px solid #000000;
   border-radius: 16px;
-  width: max-content;
+  width: 70%;
   padding: 1em;
   text-align: center;
   font-weight: bold;

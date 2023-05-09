@@ -9,6 +9,7 @@
 
 .title {
     width: 100%;
+    height: 2em;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,6 +28,13 @@ a {
     color: #153E76;
     text-decoration: none;
 }
+
+a:hover {
+    padding: 0.2em;
+    border-radius: 12px;
+    background-color: #153E76;
+    color: #FFFF;
+  }
 
 .items {
     width: 100%;

@@ -27,6 +27,8 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { FilmInformationComponent } from './pages/film-information/film-information.component';
+import { SeriesInformationComponent } from './pages/series-information/series-information.component';
+import { VideoInformationComponent } from './pages/video-information/video-information.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,8 @@ import { FilmInformationComponent } from './pages/film-information/film-informat
     VideosListPendingComponent,
     VideosListViewComponent,
     FilmInformationComponent,
+    SeriesInformationComponent,
+    VideoInformationComponent,
   ],
   imports: [
     BrowserModule,
