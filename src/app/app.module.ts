@@ -26,6 +26,7 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideStorage,getStorage } from '@angular/fire/storage';
+import { FilmInformationComponent } from './pages/film-information/film-information.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     VideosComponent,
     VideosListPendingComponent,
     VideosListViewComponent,
+    FilmInformationComponent,
   ],
   imports: [
     BrowserModule,

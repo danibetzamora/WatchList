@@ -17,7 +17,7 @@
                 <li *ngFor="let film of films.slice(0, 5)">
                     <div class="image-title">
                         <img src="{{ film.image }}" class="item-image">
-                        <p class="item-title"><b>{{ film.title }}</b></p>
+                        <p class="item-title" [routerLink]="'/film-information/' + film.id"><b>{{ film.title }}</b></p>
                     </div>
                 </li>
             </ul>

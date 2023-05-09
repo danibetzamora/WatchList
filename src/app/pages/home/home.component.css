@@ -62,3 +62,15 @@ a {
     text-align: center;
     line-height: 1.5em;
 }
+
+.item-title:hover {
+    cursor: pointer;
+    /*
+    background-color: #153E76;
+    color: #FFFF;
+    */
+    color: #0151c2;
+    width: 100%;
+    border-radius: 12px;
+    
+  }

@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
     this.getFilms();
 
     //Method to create a film on firebase
-    this.filmService.create(this.myFilm);
+    //this.filmService.create(this.myFilm);
   }
 
   public getFilms(){

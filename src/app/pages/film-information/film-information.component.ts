@@ -4,14 +4,11 @@ import { FilmService } from "../../../services/film.service";
 import { ActivatedRoute, ParamMap } from '@angular/router'
 
 @Component({
-  selector: 'app-films',
-  templateUrl: './films.component.html',
-  styleUrls: ['./films.component.css']
+  selector: 'app-film-information',
+  templateUrl: './film-information.component.html',
+  styleUrls: ['./film-information.component.css']
 })
-
-export class FilmsComponent { }
-/*
-export class FilmsComponent implements OnInit {
+export class FilmInformationComponent implements OnInit {
   id: string = '';
   film: Film = new Film;
 
@@ -29,4 +26,4 @@ export class FilmsComponent implements OnInit {
       (res: any) => this.film = ({...res.data(), 'id': res.id}) as Film
     );
   }
-*/
+}

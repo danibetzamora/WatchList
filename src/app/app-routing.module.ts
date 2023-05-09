@@ -17,6 +17,7 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { VideosComponent } from './pages/videos/videos.component';
 import { VideosListPendingComponent } from './pages/videos-list-pending/videos-list-pending.component';
 import { VideosListViewComponent } from './pages/videos-list-view/videos-list-view.component';
+import { FilmInformationComponent } from './pages/film-information/film-information.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'films',
     component: FilmsComponent
+  },
+  {
+    path: 'film-information/:id',
+    component: FilmInformationComponent
   },
   {
     path: 'films-list-pending',
