@@ -1,10 +1,44 @@
-<p>home works!</p>
+<!--p>home works!</p>
 
 <div class="gig-inline-block" *ngFor="let film of films" >
     <p class="user-gig-name">{{film.title}}</p>
     <img src="{{film.image}}" alt="">
-    <!--p class="user-gig-name">{{user.watching_list[0]}}</p-->
+    <p class="user-gig-name">{{user.watching_list[0]}}</p>
+</div-->
+<div class="home-main">
+    <div class="items-section">
+        <div class="title">
+            <h2>FILMS</h2>
+            <a routerLink="/films">VIEW ALL</a>
+        </div>
+
+        <div class="items">
+            <ul class="items-list">
+                <li *ngFor="let film of films.slice(0, 5)">
+                    <div class="image-title">
+                        <img src="{{ film.image }}" class="item-image">
+                        <p class="item-title"><b>{{ film.title }}</b></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="items-section">
+        <div class="title">
+            <h2>SERIES</h2>
+            <a routerLink="/series">VIEW ALL</a>
+        </div>
+
+        <div class="items"></div>
+    </div>
+
+    <div class="items-section">
+        <div class="title">
+            <h2>VIDEOS</h2>
+            <a routerLink="/videos">VIEW ALL</a>
+        </div>
+
+        <div class="items"></div>
+    </div>
 </div>
-
-
-

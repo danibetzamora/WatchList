@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection, addDoc, collectionSnapshots, docSnapshots, doc, updateDoc, deleteDoc } from '@angular/fire/firestore';
+import { Firestore, collection, addDoc, getDoc, setDoc, collectionSnapshots, docSnapshots, doc, updateDoc, deleteDoc } from '@angular/fire/firestore';
 import { Film } from "./film.model";
 
 @Injectable({
@@ -42,4 +42,5 @@ export class FilmService {
         image: item.image
     });
   }
+
 }

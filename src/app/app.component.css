@@ -13,7 +13,9 @@
 .app-pages {
     width: 84%;
     height: 100%;
-    padding: 1em;
+    margin-top: 4em;
+    margin-left: 12em;
+    margin-right: 12em;
 }
 
 .app-login {
