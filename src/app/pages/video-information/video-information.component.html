@@ -1,3 +1,44 @@
-<p>video-information works!</p>
+<div class="video-container">
+    <div class="title-container">
+        <h2>{{ video.title ? video.title.toUpperCase() : '' }}</h2>
+    </div>
 
-<p class="title">{{ video.title }}</p>
+    <div class="main-container">
+        <div class="information-container">
+            <div class="information">
+                <ul class="information-list">
+                    <li>
+                        <p><b>Original Title: </b>{{ video.title }}.</p> 
+                    </li>
+                    <li>
+                        <p><b>Year: </b>{{ video.release_date }}.</p> 
+                    </li>
+                    <li>
+                        <p><b>Creator: </b>{{ video.creator }}.</p>
+                    </li>
+                    <li>
+                        <p><b>Description: </b>{{ video.description }}.</p>
+                    </li>
+                    <li>
+                        <p><b>Running Time: </b>{{ video.duration }} min.</p>
+                    </li>
+                    <li>
+                        <p><b>Category: </b>{{ video.category }}.</p>
+                    </li>
+                    <li>
+                        <p><b>Link: </b>{{ video.link }}.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="image">
+                <img src="{{ video.image }}" alt="video image">
+            </div>
+        </div>
+
+        <div class="lists-container">
+            <button class="to-wacth">TO WATCH</button>
+            <button class="watched">WATCHED</button>
+        </div>
+    </div>
+</div>
