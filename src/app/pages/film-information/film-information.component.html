@@ -1,3 +1,50 @@
-<p>film-information works!</p>
+<div class="film-container">
+    <div class="title-container">
+        <h2>{{ film.title ? film.title.toUpperCase() : '' }}</h2>
+    </div>
 
-<p class="title">{{ film.cast }}</p>
+    <div class="main-container">
+        <div class="information-container">
+            <div class="information">
+                <ul class="information-list">
+                    <li>
+                        <p><b>Original Title: </b>{{ film.title }}.</p> 
+                    </li>
+                    <li>
+                        <p><b>Year: </b>{{ film.release_date }}.</p> 
+                    </li>
+                    <li>
+                        <p><b>Running Time: </b>{{ film.duration }}.</p>
+                    </li>
+                    <li>
+                        <p><b>Director: </b>{{ film.director }}.</p>
+                    </li>
+                    <li>
+                        <p><b>Cast: </b>{{ film.cast ? film.cast.join(', ') : '' }}.</p>
+                    </li>
+                    <li>
+                        <p><b>Producer: </b>{{ film.production_company }}.</p>
+                    </li>
+                    <li>
+                        <p><b>Genre: </b>{{ film.genres ? film.genres.join(', ') : '' }}.</p>
+                    </li>
+                    <li>
+                        <p><b>Synopsis: </b>{{ film.synopsis }}.</p>
+                    </li>
+                    <li>
+                        <p><b>Links: </b>{{ film.links ? film.links.join(', ') : '' }}.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="image">
+                <img src="{{ film.image }}" alt="film image">
+            </div>
+        </div>
+
+        <div class="lists-container">
+            <button class="to-wacth">I WANT TO WATCH</button>
+            <button class="watched">WATCHED</button>
+        </div>
+    </div>
+</div>
