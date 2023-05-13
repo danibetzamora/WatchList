@@ -1,0 +1,37 @@
+<div class="signup">
+    <div class="logo">
+        <img src="../../../assets/logo_watchlist.png" alt="home" class="logo">
+    </div>
+    <div class="content">
+        <div class="login-content">
+            <button class="button-login" [routerLink]="['/login']">Login</button>
+        </div>
+        <div class="signup-content">
+            <button class="button-signup" [routerLink]="['/sign-up']">Sign Up</button>
+        </div>
+
+        <form (submit)="signUp(email.value, password.value)">
+            
+            <div class="email">
+                <input type="text" name="datos" id="email" placeholder="E-mail" #email required>
+            </div>
+            <div class="user-name">
+                <input type="text" name="datos" id="user-name" placeholder="User name" required>
+            </div>
+            <div class="password">
+                <input type="text" name="datos" id="password" placeholder="Password" #password required>
+            </div>
+            <div class="confirm-password">
+                <input type="text" name="datos" id="confirm-password" placeholder="Confirm password" #confirmpassword required>
+            </div>
+
+
+            <div class="register">
+                <button type = "submit" class="submit">Register</button>
+            </div>
+
+        </form>
+
+
+    </div>
+</div>

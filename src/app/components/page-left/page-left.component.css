@@ -1,0 +1,65 @@
+header {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 16%;
+  height: 100%;
+  gap: 2em;
+  background-color: #153E76;
+}
+
+.logo-div {
+  margin-top: 2.5em;
+}
+
+.logo {
+  width: 150px;
+  height: 155px;
+}
+
+nav {
+  height: 40%;
+}
+
+.menu-list {
+  height: 100%;
+  list-style:none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+}  
+
+.search input {
+  border: 3px solid #000000;
+  border-radius: 16px;
+  width: 70%;
+  padding: 1em;
+  text-align: center;
+  font-weight: bold;
+  color: #000000;
+}  
+
+button:hover {
+  cursor: pointer;
+}
+
+button:hover {
+  width: 100%;
+  background-color: #FFFF;
+  border-radius: 12px;
+  color: #000000;
+}
+
+.button-browse, .button-my-list, .button-profile, .button-log-out {
+  background: transparent;
+  border: none;
+  color: white;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+}

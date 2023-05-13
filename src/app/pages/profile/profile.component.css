@@ -1,0 +1,60 @@
+.profile-information {
+    position:absolute;
+    width: 80%;
+    left: 20%;
+    top: 0;
+    height: 100%;
+}
+
+.img-profile {
+    text-align: center;
+    margin-top: 2%;
+}
+
+.image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.info {
+    text-align: center;
+    margin-top: 5%;
+}
+
+.data {
+    display: contents;
+    width: max-content;
+    border-color: black;
+    border-radius: 10%;
+    border-width: 10px;
+}
+
+.data input {
+    border-radius: 10px;
+    border-color: #153E76;
+    height: 20px;
+    width: max-content;
+    padding-right: 30px;
+}
+
+.data label {
+    display: block;
+    margin-top: 5px;
+}
+
+.change-passwd {
+    background: #153E76;
+    border-radius: 60px;
+    border-color: black;
+    color: white;
+    width: max-content;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 4%;
+    margin-bottom: 3%;
+}
+
+.change-passwd:hoverr {
+    cursor: pointer;
+}

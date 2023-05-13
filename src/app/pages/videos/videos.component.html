@@ -1,0 +1,24 @@
+<div class="videos-main">
+    <div class="link-section">
+        <div class="selector-div">
+            <a class="films-a" routerLink="/films">Films</a>
+            <a class="series-a" routerLink="/series">Series</a>
+            <a class="videos-a" routerLink="/videos">Videos</a>
+        </div>
+
+        <div class="filter-div">
+            <p>FILTER</p>
+        </div>
+    </div>
+
+    <div class="videos-section">
+        <ul class="videos-list">
+            <li *ngFor="let video of videos">
+                <div class="item">
+                    <img src="{{ video.image }}" class="item-image">
+                    <p class="item-title" [routerLink]="'/video-information/' + video.id"><b>{{ video.title }}</b></p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

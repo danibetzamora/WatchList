@@ -1,0 +1,25 @@
+<header class="menu">
+    <div class="logo-div">
+        <img src="../../../assets/logo_watchlist.png" alt="home" class="logo">
+    </div>
+    
+    <nav>
+        <ul class="menu-list">
+            <li class="search">
+                <input type="text" placeholder="search">
+            </li>
+            <li class="browse">
+                <button class="button-browse" [routerLink]="['home']">Browse</button>
+            </li>
+            <li class="my-list">
+                <button class="button-my-list" [routerLink]="['my-list']">My list</button>
+            </li>
+            <li class="profile">
+                <button class="button-profile" [routerLink]="['profile']">Profile</button>
+            </li>
+            <li class="log-out">
+                <button class="button-log-out" [routerLink]="['login']">Log out</button>
+            </li>
+        </ul>
+    </nav>
+</header>

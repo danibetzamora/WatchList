@@ -1,0 +1,25 @@
+<div class="login">
+    <div class="logo">
+        <img src="../../../assets/logo_watchlist.png" alt="home" class="logo">
+    </div>
+    <div class="content">
+        <div class="login-content">
+            <button class="button-login" [routerLink]="['/login']">Login</button>
+        </div>
+        <div class="signup-content">
+            <button class="button-signup" [routerLink]="['/sign-up']">Sign Up</button>
+        </div>
+        <div class="email">
+            <input type="text" name="datos" id="email" placeholder="E-mail">
+        </div>
+        <div class="password">
+            <input type="text" name="datos" id="password" placeholder="Password">
+        </div>
+        <div class="recover-password">
+            <label><a [routerLink]="['/forgot-password']">Have you forgotten the password?</a></label>
+        </div>
+        <div class="access">
+            <button class="submit">Access</button>
+        </div>
+    </div>
+</div>
