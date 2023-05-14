@@ -18,6 +18,7 @@ export class VideoInformationComponent implements OnInit {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.id = params.get('id') ?? '';
       this.getVideo();
+      window.scrollTo(0, 0);
     });
   }
 
