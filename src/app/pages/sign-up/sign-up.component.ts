@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { GoogleAuthService } from 'src/services/google-auth.service';
+
+
 
 @Component({
   selector: 'app-sign-up',
@@ -7,4 +10,11 @@ import { Component } from '@angular/core';
 })
 export class SignUpComponent {
 
+  constructor(
+    private googleService: GoogleAuthService,
+  ) {}
+
+  GoogleSignIn(){
+    this.googleService.signInWithGoogle();
+  }
 }
