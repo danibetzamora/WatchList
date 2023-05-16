@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GoogleAuthService } from 'src/services/google-auth.service';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { Router } from '@angular/router';
 
@@ -11,7 +12,11 @@ export class SignUpComponent {
   email: string = '';
   password: string = '';
 
-  constructor(private router: Router) { }
+  constructor(private googleService: GoogleAuthService, private router: Router) { }
+
+  GoogleSignIn(){
+    this.googleService.signInWithGoogle();
+  }
   
   signUp(emailPass: string, passwordPass: string): void{
     const auth = getAuth();

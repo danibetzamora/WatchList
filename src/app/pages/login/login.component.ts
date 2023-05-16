@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GoogleAuthService } from 'src/services/google-auth.service';
 import { User } from "../../../services/user.model";
 import { UserService } from "../../../services/user.service";
 import { getAuth, onAuthStateChanged, signInWithEmailAndPassword  } from "firebase/auth";
@@ -15,12 +16,17 @@ const auth = getAuth(app);
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+
   LogInForm! :FormGroup;
-  constructor(private router: Router, private userService: UserService, private formBuilder: FormBuilder) {
+  constructor(private googleService: GoogleAuthService, private router: Router, private userService: UserService, private formBuilder: FormBuilder) {
     this.LogInForm = this.formBuilder.group({email: ['',[ Validators.required, Validators.email] ],
       password: ['', [Validators.required,  Validators.maxLength(30)]]
     });
   }
+  GoogleSignIn(){
+    this.googleService.signInWithGoogle();
+  }
+    
   get email(){
     return this.LogInForm.get('email')
   }
@@ -39,4 +45,5 @@ export class LoginComponent {
     alert("Email o contraseñas incorrectas");
   });
   }
+  
 }

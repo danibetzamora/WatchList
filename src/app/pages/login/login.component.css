@@ -108,11 +108,26 @@
 
 .submit {
     position: absolute;
-    top: 78%;
+    top: 83%;
     left: 0%;
     right: 0%;
     margin: auto;
     background: #153E76;
+    border-radius: 60px;
+    border-color: black;
+    color: white;
+    width: max-content;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.google {
+    position: absolute;
+    top: 73%;
+    left: 0%;
+    right: 0%;
+    margin: auto;
+    background: #ff7b00;
     border-radius: 60px;
     border-color: black;
     color: white;
