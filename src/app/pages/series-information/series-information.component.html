@@ -1,3 +1,51 @@
-<p>series-information works!</p>
+<div class="series-container">
+    <div class="title-container">
+        <h2>{{ series.title ? series.title.toUpperCase() : '' }}</h2>
+    </div>
 
-<p class="title">{{ series.title }}</p>
+    <div class="main-container">
+        <div class="information-container">
+            <div class="information">
+                <ul class="information-list">
+                    <li>
+                        <p><b>Original Title: </b>{{ series.title }}.</p> 
+                    </li>
+                    <li>
+                        <p><b>Year: </b>{{ series.release_date }}.</p> 
+                    </li>
+                    <li>
+                        <p><b>Director: </b>{{ series.director }}.</p>
+                    </li>
+                    <li>
+                        <p><b>Cast: </b>{{ series.cast ? series.cast.join(', ') : '' }}.</p>
+                    </li>
+                    <li>
+                        <p><b>Episodes: </b>{{ series.episodes }}.</p>
+                    </li>
+                    <li>
+                        <p><b>Seasons: </b>{{ series.seasons }}.</p>
+                    </li>
+                    <li>
+                        <p><b>Genre: </b>{{ series.genres ? series.genres.join(', ') : '' }}.</p>
+                    </li>
+                    <li>
+                        <p><b>Synopsis: </b>{{ series.synopsis }}.</p>
+                    </li>
+                    <li>
+                        <p><b>Links: </b>{{ series.links ? series.links.join(', ') : '' }}.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="image">
+                <img src="{{ series.image }}" alt="series image">
+            </div>
+        </div>
+
+        <div class="lists-container">
+            <button class="to-wacth">TO WATCH</button>
+            <button class="watching">WATCHING</button>
+            <button class="watched">WATCHED</button>
+        </div>
+    </div>
+</div>

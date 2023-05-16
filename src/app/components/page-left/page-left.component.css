@@ -46,9 +46,6 @@ nav {
 
 button:hover {
   cursor: pointer;
-}
-
-button:hover {
   width: 100%;
   background-color: #FFFF;
   border-radius: 12px;

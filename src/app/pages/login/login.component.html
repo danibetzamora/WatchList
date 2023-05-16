@@ -2,14 +2,32 @@
     <div class="logo">
         <img src="../../../assets/logo_watchlist.png" alt="home" class="logo">
     </div>
-    <div class="content">
+   <div class="content">
         <div class="login-content">
             <button class="button-login" [routerLink]="['/login']">Login</button>
         </div>
         <div class="signup-content">
             <button class="button-signup" [routerLink]="['/sign-up']">Sign Up</button>
         </div>
-        <div class="email">
+        <form [formGroup]="LogInForm" (ngSubmit)="LogIn()" novalidate>
+            <div class="email">
+                <input type="text" id="email" formControlName="email" placeholder="Email">
+            </div>
+            <div *ngIf="email?.dirty" >
+                <span style ="color: red;" *ngIf="LogInForm.get('email')?.errors?.['required']">Field email is required</span>
+                <span *ngIf="LogInForm.get('email')?.errors?.['email']">It has to be an email account</span>
+            </div>  
+            <div class="password">
+                <input type="password" id="password" formControlName="password">
+            </div>
+            <div class="recover-password">
+                <label><a [routerLink]="['/forgot-password']">Have you forgotten the password?</a></label>
+            </div>
+            <div class="access">
+                <button [disabled]="LogInForm.invalid" class="submit" type="submit">Access</button>
+            </div>
+        </form>
+        <!--<div class="email">
             <input type="text" name="datos" id="email" placeholder="E-mail">
         </div>
         <div class="password">
@@ -20,7 +38,7 @@
         </div>
         <div class="access">
             <button class="submit">Access</button>
-        </div>
+        </div>-->
         <div class="register">
             <button class="google" (click)="GoogleSignIn()">Sign in with google</button>
         </div>
