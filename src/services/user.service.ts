@@ -1,15 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Firestore, collection, addDoc, collectionSnapshots, docSnapshots, doc, updateDoc, deleteDoc } from '@angular/fire/firestore';
 import { User } from "./user.model";
+import { Auth, signOut } from '@angular/fire/auth';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
+  private _loggedUserId = new BehaviorSubject<string>('null');
+
   collection = 'users';
 
-  constructor(private firestore: Firestore) {}
+  constructor(private auth: Auth, private firestore: Firestore) {}
 
   getDocument(id: string) {
     return docSnapshots( doc(this.firestore, `${this.collection}/${id}`) );
@@ -37,5 +41,13 @@ export class UserService {
         watched_list: item.watched_list,
         watching_list: item.watching_list
     });
+  }
+
+  logOut() {
+    return signOut(this.auth);
+  }
+
+  setLoggedUserId(value: string) {
+    this._loggedUserId.next(value);
   }
 }

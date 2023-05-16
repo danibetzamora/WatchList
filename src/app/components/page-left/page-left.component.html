@@ -18,7 +18,7 @@
                 <button class="button-profile" [routerLink]="['profile']">Profile</button>
             </li>
             <li class="log-out">
-                <button class="button-log-out" [routerLink]="['login']">Log out</button>
+                <button class="button-log-out" (click)="logOut()" [routerLink]="['login']">Log out</button>
             </li>
         </ul>
     </nav>
