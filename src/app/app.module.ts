@@ -7,6 +7,7 @@ import { FilmsComponent } from './pages/films/films.component';
 import { FilmsListPendingComponent } from './pages/films-list-pending/films-list-pending.component';
 import { FilmsListViewComponent } from './pages/films-list-view/films-list-view.component';
 import { FilterComponent } from './components/filter/filter.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -59,6 +60,8 @@ import { VideoInformationComponent } from './pages/video-information/video-infor
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
