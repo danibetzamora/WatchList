@@ -12,10 +12,11 @@ export class PageLeftComponent {
 
   editable: boolean = false;
   userId: string = '';
+  /*
   user: User = {
 
   };
-
+  */
   constructor(private userService: UserService,
               private router: Router){}
 
@@ -33,7 +34,7 @@ export class PageLeftComponent {
       console.log('Sesión cerrada correctamente');
       this.userService.setLoggedUserId('null');
       this.router.navigate(['/login']);
-      this.user = {};
+      //
       this.userId = 'null';
     }).catch((error) => {
       console.error(error);

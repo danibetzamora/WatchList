@@ -10,13 +10,13 @@
             <button class="button-signup" [routerLink]="['/sign-up']">Sign Up</button>
         </div>
 
-        <form (submit)="signUp(email.value, password.value)">
+        <form (submit)="signUp(email.value, password.value, name.value)">
             
             <div class="email">
                 <input type="text" name="datos" id="email" placeholder="E-mail" #email required>
             </div>
             <div class="user-name">
-                <input type="text" name="datos" id="user-name" placeholder="User name" required>
+                <input type="text" name="datos" id="user-name" placeholder="User name" #name required>
             </div>
             <div class="password">
                 <input type="text" name="datos" id="password" placeholder="Password" #password required>

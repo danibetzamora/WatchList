@@ -14,7 +14,7 @@ export class AppComponent {
   constructor(private router: Router) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.isLoginPage = (event.url === '/login' || event.url === '/sign-up' || event.url === '/forgot-password');
+        this.isLoginPage = (event.url === '/login' || event.url === '/sign-up' || event.url === '/forgot-password' || event.url === '/');
       }
     });
   }

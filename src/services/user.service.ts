@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection, addDoc, collectionSnapshots, docSnapshots, doc, updateDoc, deleteDoc } from '@angular/fire/firestore';
+import { Firestore, collection, addDoc, collectionSnapshots, docSnapshots, doc, updateDoc, deleteDoc, arrayUnion } from '@angular/fire/firestore';
 import { User } from "./user.model";
 import { Auth, signOut } from '@angular/fire/auth';
 import { BehaviorSubject } from 'rxjs';
@@ -41,6 +41,32 @@ export class UserService {
         watched_list: item.watched_list,
         watching_list: item.watching_list
     });
+  }
+
+  addFilmToWatchList(userID: string, filmID: string): void {
+    const userRef = doc(this.firestore, 'users', userID);
+    const updateData = { ['to_watch_list']: arrayUnion(filmID) };
+
+    updateDoc(userRef, updateData)
+      .then(() => {
+        console.log('Nuevo elemento agregado con éxito');
+      })
+      .catch((error) => {
+        console.error('Error al agregar el nuevo elemento:', error);
+      });
+  }
+
+  addFilmToWatchedList(userID: string, filmID: string): void {
+    const userRef = doc(this.firestore, 'users', userID);
+    const updateData = { ['watched_list']: arrayUnion(filmID) };
+
+    updateDoc(userRef, updateData)
+      .then(() => {
+        console.log('Nuevo elemento agregado con éxito');
+      })
+      .catch((error) => {
+        console.error('Error al agregar el nuevo elemento:', error);
+      });
   }
 
   logOut() {

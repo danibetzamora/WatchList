@@ -1,1 +1,18 @@
-<p>my-list works!</p>
+<div *ngIf="user != undefined">
+    <p>{{ user.to_watch_list }}</p>
+</div>
+
+<div class="items-section">
+    <div class="title">
+        <h2>FILMS</h2>
+        <a routerLink="/films">VIEW ALL</a>
+    </div>
+
+    <div class="items">
+        <ul class="items-list">
+            <li *ngFor="let film of films">
+                <p>{{ film.title }}</p>
+            </li>
+        </ul>
+    </div>
+</div>
