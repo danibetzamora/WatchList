@@ -10,8 +10,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent {
-  email: string = '';
-  password: string = '';
 
   constructor(private googleService: GoogleAuthService, private router: Router, private firestore: Firestore) { }
 
@@ -19,7 +17,17 @@ export class SignUpComponent {
     this.googleService.signInWithGoogle();
   }
   
-  signUp(emailPass: string, passwordPass: string, userName: string): void{
+  signUp(emailPass: string, userName: string, passwordPass: string, confirmPasswordPass: string): void{
+    if (!this.checkPasswordMatch(passwordPass, confirmPasswordPass)) {
+      alert('Passwords do not match!');
+      return;
+    }
+
+    if (!this.checkPasswordLength(passwordPass)) {
+      alert('Password must be at least 6 characters');
+      return;
+    }
+
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, emailPass, passwordPass)
       .then(value => {
@@ -29,19 +37,23 @@ export class SignUpComponent {
         const userData = {
           name: userName,
           email: emailPass,
-          to_watch_list: [],
-          watched_list: [],
-          watching_list: []
+          films_to_watch_list: [],
+          films_watched_list: [],
+          series_to_watch_list: [],
+          series_watching_list: [],
+          series_watched_list: [],
+          videos_to_watch_list: [],
+          videos_watched_list: []
         };
 
         const userRef = doc(this.firestore, 'users', userId);
 
         setDoc(userRef, userData)
           .then(() => {
-            console.log('Nuevo usuario creado exitosamente en Firestore');
+            console.log('New user created on Firestore');
           })
           .catch((error) => {
-            console.error('Error al crear el nuevo usuario en Firestore:', error);
+            console.error('Error with the creation of the user', error);
           });
 
         this.router.navigateByUrl('/login');
@@ -49,5 +61,13 @@ export class SignUpComponent {
       .catch(err => {
         console.error('Something went wrong:', err.message);
       });
+  }
+
+  checkPasswordMatch(password: string, confirmPassword: string): boolean {
+    return password === confirmPassword;
+  }
+
+  checkPasswordLength(password: string): boolean {
+    return password.length >= 6;
   }
 }

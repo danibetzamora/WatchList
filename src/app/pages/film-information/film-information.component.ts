@@ -3,7 +3,7 @@ import { Film } from "../../../services/film.model";
 import { FilmService } from "../../../services/film.service";
 import { UserService } from "../../../services/user.service";
 import { ActivatedRoute, ParamMap } from '@angular/router'
-import { getAuth, User } from 'firebase/auth';
+import { getAuth } from 'firebase/auth';
 
 @Component({
   selector: 'app-film-information',
@@ -15,6 +15,10 @@ export class FilmInformationComponent implements OnInit {
   film: Film = new Film;
   userId: string = '';
 
+  /*
+  isToWatch: boolean = false;
+  isWatched: boolean = false;
+  */
   constructor(private route: ActivatedRoute, private filmService: FilmService, private userService: UserService) {}
 
   ngOnInit(): void {
@@ -30,6 +34,9 @@ export class FilmInformationComponent implements OnInit {
       this.userId = auth.currentUser.uid;
     }
     this.userService.addFilmToWatchList(this.userId,this.id);
+
+    alert('Film added to "To Watch List"');
+    //this.isToWatch = !this.isToWatch;
   }
 
   public watchedList() {
@@ -38,6 +45,9 @@ export class FilmInformationComponent implements OnInit {
       this.userId = auth.currentUser.uid;
     }
     this.userService.addFilmToWatchedList(this.userId,this.id);
+
+    alert('Film added to "Watched List"');
+    //this.isWatched = !this.isWatched;
   }
 
   public getFilm() {
