@@ -1,1 +1,23 @@
-<p>videos-list-pending works!</p>
+<div class="videos-main">
+    <div class="link-section">
+        <div class="selector-div">
+            <a class="towatch-a" routerLink="/videos-list-pending">To Watch List</a>
+            <a class="watched-a" routerLink="/videos-list-view">Watched List</a>
+        </div>
+
+        <div class="filter-div">
+            <p>FILTER</p>
+        </div>
+    </div>
+
+    <div class="videos-section">
+        <ul class="videos-list">
+            <li *ngFor="let video of videos">
+                <div class="item">
+                    <img src="{{ video.image }}" class="item-image">
+                    <p class="item-title" [routerLink]="'/video-information/' + video.id"><b>{{ video.title }}</b></p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

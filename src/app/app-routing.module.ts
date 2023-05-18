@@ -95,7 +95,7 @@ const routes: Routes = [
     ...canActivate(() => redirectUnauthorizedTo(['/login']))
   },
   {
-    path: 'films-list-view',
+    path: 'series-list-view',
     component: SeriesListViewComponent,
     ...canActivate(() => redirectUnauthorizedTo(['/login']))
   },
