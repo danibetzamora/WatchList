@@ -3,6 +3,7 @@ import { Firestore, collection, addDoc, collectionSnapshots, docSnapshots, doc, 
 import { User } from "./user.model";
 import { Auth, signOut } from '@angular/fire/auth';
 import { BehaviorSubject } from 'rxjs';
+import { arrayRemove } from 'firebase/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -73,6 +74,32 @@ export class UserService {
       });
   }
 
+  removeFilmFromToWatchList(userID: string, filmID: string): void {
+    const userRef = doc(this.firestore, 'users', userID);
+    const updateData = { ['films_to_watch_list']: arrayRemove(filmID) };
+  
+    updateDoc(userRef, updateData)
+      .then(() => {
+        console.log('Item successfully removed from To Watch List');
+      })
+      .catch((error) => {
+        console.error('Error removing item from To Watch List', error);
+      });
+  }
+  
+  removeFilmFromWatchedList(userID: string, filmID: string): void {
+    const userRef = doc(this.firestore, 'users', userID);
+    const updateData = { ['films_watched_list']: arrayRemove(filmID) };
+  
+    updateDoc(userRef, updateData)
+      .then(() => {
+        console.log('Item successfully removed from Watched List');
+      })
+      .catch((error) => {
+        console.error('Error removing item from Watched List', error);
+      });
+  }
+
   addSeriesToWatchList(userID: string, seriesID: string): void {
     const userRef = doc(this.firestore, 'users', userID);
     const updateData = { ['series_to_watch_list']: arrayUnion(seriesID) };
@@ -112,6 +139,45 @@ export class UserService {
       });
   }
 
+  removeSeriesFromToWatchList(userID: string, seriesID: string): void {
+    const userRef = doc(this.firestore, 'users', userID);
+    const updateData = { ['series_to_watch_list']: arrayRemove(seriesID) };
+  
+    updateDoc(userRef, updateData)
+      .then(() => {
+        console.log('Item successfully removed from To Watch List');
+      })
+      .catch((error) => {
+        console.error('Error removing item from To Watch List', error);
+      });
+  }
+  
+  removeSeriesFromWatchedList(userID: string, seriesID: string): void {
+    const userRef = doc(this.firestore, 'users', userID);
+    const updateData = { ['series_watched_list']: arrayRemove(seriesID) };
+  
+    updateDoc(userRef, updateData)
+      .then(() => {
+        console.log('Item successfully removed from Watched List');
+      })
+      .catch((error) => {
+        console.error('Error removing item from Watched List', error);
+      });
+  }
+
+  removeSeriesFromWatchingList(userID: string, seriesID: string): void {
+    const userRef = doc(this.firestore, 'users', userID);
+    const updateData = { ['series_watching_list']: arrayRemove(seriesID) };
+  
+    updateDoc(userRef, updateData)
+      .then(() => {
+        console.log('Item successfully removed from Watching List');
+      })
+      .catch((error) => {
+        console.error('Error removing item from Watching List', error);
+      });
+  }
+
   addVideoToWatchList(userID: string, videoID: string): void {
     const userRef = doc(this.firestore, 'users', userID);
     const updateData = { ['videos_to_watch_list']: arrayUnion(videoID) };
@@ -135,6 +201,32 @@ export class UserService {
       })
       .catch((error) => {
         console.error('Error adding new item', error);
+      });
+  }
+
+  removeVideoFromToWatchList(userID: string, videoID: string): void {
+    const userRef = doc(this.firestore, 'users', userID);
+    const updateData = { ['videos_to_watch_list']: arrayRemove(videoID) };
+  
+    updateDoc(userRef, updateData)
+      .then(() => {
+        console.log('Item successfully removed from To Watch List');
+      })
+      .catch((error) => {
+        console.error('Error removing item from To Watch List', error);
+      });
+  }
+  
+  removeVideoFromWatchedList(userID: string, videoID: string): void {
+    const userRef = doc(this.firestore, 'users', userID);
+    const updateData = { ['videos_watched_list']: arrayRemove(videoID) };
+  
+    updateDoc(userRef, updateData)
+      .then(() => {
+        console.log('Item successfully removed from Watched List');
+      })
+      .catch((error) => {
+        console.error('Error removing item from Watched List', error);
       });
   }
 

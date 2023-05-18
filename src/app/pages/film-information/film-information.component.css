@@ -95,12 +95,17 @@ p {
     font-size: 1.5rem;
 }
 
-.lists-container > button:hover {
+.to-watch:hover, .watched:hover {
     cursor: pointer;
     background-color: #1e74ec;
 }
 
 .active {
-    background-color: red;
+    background-color: rgb(187, 10, 10);
     color: white;
+}
+
+.active:hover {
+    cursor: pointer;
+    background-color: #ff0000;
 }

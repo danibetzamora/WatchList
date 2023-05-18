@@ -15,6 +15,10 @@ export class SeriesInformationComponent implements OnInit {
   series: Series = new Series;
   userId: string = '';
 
+  isToWatch: boolean = false;
+  isWatching: boolean = false;
+  isWatched: boolean = false;
+
   constructor(private route: ActivatedRoute, private seriesService: SeriesService, private userService: UserService) {}
 
   ngOnInit(): void {
@@ -30,7 +34,7 @@ export class SeriesInformationComponent implements OnInit {
       this.userId = auth.currentUser.uid;
     }
     this.userService.addSeriesToWatchList(this.userId,this.id);
-    alert('Series added to "To Watch List"');
+    this.isToWatch = true;
   }
 
   public watchingList() {
@@ -39,7 +43,7 @@ export class SeriesInformationComponent implements OnInit {
       this.userId = auth.currentUser.uid;
     }
     this.userService.addSeriesToWatchingList(this.userId,this.id);
-    alert('Series added to "Watching List"');
+    this.isWatching = true;
   }
 
   public watchedList() {
@@ -48,12 +52,90 @@ export class SeriesInformationComponent implements OnInit {
       this.userId = auth.currentUser.uid;
     }
     this.userService.addSeriesToWatchedList(this.userId,this.id);
-    alert('Series added to "Watched List"');
+    this.isWatched = true;
+  }
+
+  public removeFromToWatchList() {
+    const auth = getAuth();
+    if (auth.currentUser) {
+      this.userId = auth.currentUser.uid;
+      this.userService.removeSeriesFromToWatchList(this.userId, this.id);
+      this.isToWatch = false;
+    }
+  }
+
+  public removeFromWatchingList() {
+    const auth = getAuth();
+    if (auth.currentUser) {
+      this.userId = auth.currentUser.uid;
+      this.userService.removeSeriesFromWatchingList(this.userId, this.id);
+      this.isWatching = false;
+    }
+  }
+
+  public removeFromWatchedList() {
+    const auth = getAuth();
+    if (auth.currentUser) {
+      this.userId = auth.currentUser.uid;
+      this.userService.removeSeriesFromWatchedList(this.userId, this.id);
+      this.isWatched = false;
+    }
   }
 
   public getSeries() {
-    this.seriesService.getDocument(this.id).subscribe(
-      (res: any) => this.series = ({...res.data(), 'id': res.id}) as Series
-    );
+    this.seriesService.getDocument(this.id).subscribe((res: any) => {
+      this.series = { ...res.data(), id: res.id } as Series;
+      this.checkSeriesInUserToWatchList();
+      this.checkSeriesInUserWatchingList();
+      this.checkSeriesInUserWatchedList();
+    });
+  }
+
+  private checkSeriesInUserToWatchList() {
+    const auth = getAuth();
+    if (auth.currentUser) {
+      this.userId = auth.currentUser.uid;
+      this.userService.getDocument(this.userId).subscribe((res: any) => {
+        const user = { ...res.data(), id: res.id };
+        if (
+          Array.isArray(user.series_to_watch_list) &&
+          user.series_to_watch_list.includes(this.id)
+        ) {
+          this.isToWatch = true;
+        }
+      });
+    }
+  }
+
+  private checkSeriesInUserWatchingList() {
+    const auth = getAuth();
+    if (auth.currentUser) {
+      this.userId = auth.currentUser.uid;
+      this.userService.getDocument(this.userId).subscribe((res: any) => {
+        const user = { ...res.data(), id: res.id };
+        if (
+          Array.isArray(user.series_watching_list) &&
+          user.series_watching_list.includes(this.id)
+        ) {
+          this.isWatching = true;
+        }
+      });
+    }
+  }
+
+  private checkSeriesInUserWatchedList() {
+    const auth = getAuth();
+    if (auth.currentUser) {
+      this.userId = auth.currentUser.uid;
+      this.userService.getDocument(this.userId).subscribe((res: any) => {
+        const user = { ...res.data(), id: res.id };
+        if (
+          Array.isArray(user.series_watched_list) &&
+          user.series_watched_list.includes(this.id)
+        ) {
+          this.isWatched = true;
+        }
+      });
+    }
   }
 }
