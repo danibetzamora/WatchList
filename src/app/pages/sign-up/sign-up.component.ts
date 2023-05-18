@@ -12,10 +12,6 @@ import { Router } from '@angular/router';
 export class SignUpComponent {
 
   constructor(private googleService: GoogleAuthService, private router: Router, private firestore: Firestore) { }
-
-  GoogleSignIn(){
-    this.googleService.signInWithGoogle();
-  }
   
   signUp(emailPass: string, userName: string, userLastName: string, userBirth: string, passwordPass: string, confirmPasswordPass: string): void{
     if (!this.checkPasswordMatch(passwordPass, confirmPasswordPass)) {
@@ -23,7 +19,7 @@ export class SignUpComponent {
       return;
     }
 
-    if (!this.checkPasswordLength(passwordPass)) {
+    if (passwordPass.length > 0 && !this.checkPasswordLength(passwordPass)) {
       alert('Password must be at least 6 characters');
       return;
     }
@@ -63,6 +59,10 @@ export class SignUpComponent {
       .catch(err => {
         console.error('Something went wrong:', err.message);
       });
+  }
+
+  GoogleSignIn(){
+    this.googleService.signInWithGoogle();
   }
 
   checkPasswordMatch(password: string, confirmPassword: string): boolean {
