@@ -37,8 +37,13 @@
         </div>
 
         <div class="lists-container">
-            <button (click)="toWatchList()" class="to-watch">TO WATCH</button>
-            <button (click)="watchedList()" class="watched">WATCHED</button>
+            <button (click)="isToWatch ? removeFromToWatchList() : toWatchList()" [class.active]="isToWatch" class="to-watch">
+                {{ isToWatch ? 'REMOVE TO WATCH' : 'TO WATCH' }}
+            </button>
+
+            <button (click)="isWatched ? removeFromWatchedList() : watchedList()" [class.active]="isWatched" class="watched">
+                {{ isWatched ? 'REMOVE WATCHED' : 'WATCHED' }}
+            </button>
         </div>
     </div>
 </div>

@@ -74,7 +74,7 @@ p {
     gap: 5em;
 }
 
-.lists-container > button {
+.to-watch, .watched {
     background: transparent;
     border: none;
     border-radius: 10px;
@@ -85,7 +85,17 @@ p {
     font-size: 1.5rem;
 }
 
-.lists-container > button:hover {
+.to-watch:hover, .watched:hover {
     cursor: pointer;
     background-color: #1e74ec;
-  }
+}
+
+.active {
+    background-color: rgb(187, 10, 10);
+    color: white;
+}
+
+.active:hover {
+    cursor: pointer;
+    background-color: #ff0000;
+}

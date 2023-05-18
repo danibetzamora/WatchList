@@ -15,6 +15,9 @@ export class VideoInformationComponent implements OnInit {
   video: Video = new Video;
   userId: string = '';
 
+  isToWatch: boolean = false;
+  isWatched: boolean = false;
+
   constructor(private route: ActivatedRoute, private videoService: VideoService, private userService: UserService) {}
 
   ngOnInit(): void {
@@ -31,7 +34,7 @@ export class VideoInformationComponent implements OnInit {
       this.userId = auth.currentUser.uid;
     }
     this.userService.addVideoToWatchList(this.userId,this.id);
-    alert('Video added to "To Watch List"');
+    this.isToWatch = true;
   }
 
   public watchedList() {
@@ -40,12 +43,64 @@ export class VideoInformationComponent implements OnInit {
       this.userId = auth.currentUser.uid;
     }
     this.userService.addVideoToWatchedList(this.userId,this.id);
-    alert('Video added to "Watched List"');
+    this.isWatched = true;
+  }
+
+  public removeFromToWatchList() {
+    const auth = getAuth();
+    if (auth.currentUser) {
+      this.userId = auth.currentUser.uid;
+      this.userService.removeVideoFromToWatchList(this.userId, this.id);
+      this.isToWatch = false;
+    }
+  }
+
+  public removeFromWatchedList() {
+    const auth = getAuth();
+    if (auth.currentUser) {
+      this.userId = auth.currentUser.uid;
+      this.userService.removeVideoFromWatchedList(this.userId, this.id);
+      this.isWatched = false;
+    }
   }
 
   public getVideo() {
-    this.videoService.getDocument(this.id).subscribe(
-      (res: any) => this.video = ({...res.data(), 'id': res.id}) as Video
-    );
+    this.videoService.getDocument(this.id).subscribe((res: any) => {
+      this.video = { ...res.data(), id: res.id } as Video;
+      this.checkVideoInUserToWatchList();
+      this.checkVideoInUserWatchedList();
+    });
+  }
+
+  private checkVideoInUserToWatchList() {
+    const auth = getAuth();
+    if (auth.currentUser) {
+      this.userId = auth.currentUser.uid;
+      this.userService.getDocument(this.userId).subscribe((res: any) => {
+        const user = { ...res.data(), id: res.id };
+        if (
+          Array.isArray(user.videos_to_watch_list) &&
+          user.videos_to_watch_list.includes(this.id)
+        ) {
+          this.isToWatch = true;
+        }
+      });
+    }
+  }
+
+  private checkVideoInUserWatchedList() {
+    const auth = getAuth();
+    if (auth.currentUser) {
+      this.userId = auth.currentUser.uid;
+      this.userService.getDocument(this.userId).subscribe((res: any) => {
+        const user = { ...res.data(), id: res.id };
+        if (
+          Array.isArray(user.videos_watched_list) &&
+          user.videos_watched_list.includes(this.id)
+        ) {
+          this.isWatched = true;
+        }
+      });
+    }
   }
 }
