@@ -1,3 +1,4 @@
+/*
 .profile-information {
     position:absolute;
     width: 80%;
@@ -57,4 +58,75 @@
 
 .change-passwd:hoverr {
     cursor: pointer;
+}
+*/
+
+.profile-information {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.info {
+    width: 50%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.data {
+    width: 70%;
+    height: 18%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.data > h3 {
+    text-align: center;
+}
+
+.user-data > input {
+    width: 20em;
+    height: 2em;
+    padding: 0.5em;
+    border-radius: 4px;
+    border: 2px solid #808080;
+}
+
+.user-data > input::placeholder {
+    font-size: 15px;
+}
+
+.button-password {
+    margin-top: 3em;
+}
+
+.change-passwd {
+    padding: 0.5em;
+    width: 10em;
+    border-radius: 4px;
+    border: none;
+    background-color: #153E76;
+    color: #FFFF;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.change-passwd:hover {
+    cursor: pointer;
+    background-color: #1e74ec;
 }

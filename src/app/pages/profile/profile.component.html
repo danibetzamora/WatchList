@@ -2,38 +2,37 @@
   <div class="img-profile">
     <img src="../../../assets/profile-hp.jpg" alt="img" class="image">
   </div>
+
   <div class="info">
-    <div class="user-name">
-        <h3>User name</h3>
-        <div class="data">
+    <div class="data">
+        <h3>First Name</h3>
+        <div class="user-data">
           <input type="text" name="datos" id="user-name" placeholder="{{ user.name }}">
         </div>
     </div>
-    <div class="name">
-        <h3>Name</h3>
-        <div class="data">
-          <input type="text" name="datos" id="name">
+
+    <div class="data">
+        <h3>Last Name</h3>
+        <div class="user-data">
+          <input type="text" name="datos" id="name" placeholder="{{ user.last_name }}">
         </div>
     </div>
-    <div class="email">
+
+    <div class="data">
         <h3>Email</h3>
-        <div class="data">
+        <div class="user-data">
           <input type="text" name="datos" id="email" placeholder="{{ user.email }}">
         </div>
     </div>
-    <div class="birthdate">
+
+    <div class="data">
         <h3>Birthdate</h3>
-        <div class="data">
-          <input type="text" name="datos" id="birthdate">
+        <div class="user-data">
+          <input type="text" name="datos" id="birthdate" placeholder="{{ user.birth_date }}">
         </div>
     </div>
-    <div class="password">
-        <h3>Password</h3>
-        <div class="data">
-          <input type="text" name="datos" id="password">
-        </div>
-    </div>
-    <div class="botones">
+
+    <div class="button-password">
       <button class="change-passwd" [routerLink]="['/change-password']">Change password</button>
     </div>
   </div>

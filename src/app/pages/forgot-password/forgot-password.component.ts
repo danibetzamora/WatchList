@@ -18,7 +18,7 @@ export class ForgotPasswordComponent {
 
   async onReset() {
     try {
-      window.alert("Correo electrónico enviado, ¡comprueba tu bandeja de entrada!");
+      window.alert("Email sent, check your inbox!");
       this.router.navigate(['/login']);
     } catch(error) {
       console.log(error);

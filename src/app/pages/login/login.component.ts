@@ -36,7 +36,7 @@ export class LoginComponent {
     signInWithEmailAndPassword(auth, useremail,userpassword).then((userCredential) => {
     const user = userCredential.user;
     if (user!=null){
-      this.router.navigate(['/profile']);
+      this.router.navigate(['/home']);
     }
   })
   .catch((error) => {
