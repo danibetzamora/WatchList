@@ -1,4 +1,4 @@
-<div class="signup">
+<!--div class="signup">
     <div class="logo">
         <img src="../../../assets/logo_watchlist.png" alt="home" class="logo">
     </div>
@@ -13,16 +13,20 @@
 
         <form (submit)="signUp(email.value, name.value, password.value, confirmpassword.value)">
             <div class="email">
-                <input type="text" name="datos" id="email" placeholder="E-mail" #email required>
+                <input type="text" name="datos" id="email" placeholder="Email" #email required>
             </div>
 
             <div class="user-name">
-                <input type="text" name="datos" id="user-name" placeholder="User Name" #name required>
+                <input type="text" name="datos" id="user-name" placeholder="Name" #name required>
             </div>
 
-            <!--div class="birth">
+            <div class="user-lastname">
+                <input type="text" name="datos" id="user-lastname" placeholder="Last Name" #lastname required>
+            </div>
+
+            <div class="birth">
                 <input type="text" name="datos" id="birth" placeholder="Date of birth" #birth required>
-            </div-->
+            </div>
 
             <div class="password">
                 <input type="password" name="datos" id="password" placeholder="Password" #password required>
@@ -40,5 +44,51 @@
         <div class="register">
             <button class="google" (click)="GoogleSignIn()">Sign in with google</button>
         </div>
+    </div>
+</div-->
+
+<div class="signup">
+    <div class="logo">
+        <img src="../../../assets/logo_watchlist.png" alt="home" class="logo-image">
+    </div>
+    <div class="content">
+        <div class="link-div">
+            <button class="button-login" [routerLink]="['/login']">Login</button>
+            <button class="button-signup" [routerLink]="['/sign-up']">Sign Up</button>
+        </div>
+
+        <form (submit)="signUp(email.value, name.value, lastname.value, birth.value, password.value, confirmpassword.value)">
+            <div class="data">
+                <input type="text" name="datos" id="email" placeholder="E-mail" #email required>
+            </div>
+
+            <div class="data">
+                <input type="text" name="datos" id="user-name" placeholder="Name" #name required>
+            </div>
+
+            <div class="data">
+                <input type="text" name="datos" id="user-lastname" placeholder="Last Name" #lastname required>
+            </div>
+
+            <div class="data">
+                <input type="text" name="datos" id="birth" placeholder="Date of birth" #birth required>
+            </div>
+
+            <div class="data">
+                <input type="password" name="datos" id="password" placeholder="Password" #password required>
+            </div>
+
+            <div class="data">
+                <input type="password" name="datos" id="confirm-password" placeholder="Confirm password" #confirmpassword required>
+            </div>
+
+            <div class="register1">
+                <button type = "submit" class="submit">Register</button>
+            </div>
+
+            <div class="register2">
+                <button class="google" (click)="GoogleSignIn()">Sign in with Google</button>
+            </div>
+        </form>
     </div>
 </div>

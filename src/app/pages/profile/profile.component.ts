@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { User } from "../../../services/user.model";
 import { UserService} from "../../../services/user.service";
+import { getAuth } from 'firebase/auth';
 
 @Component({
   selector: 'app-profile',
@@ -8,19 +9,22 @@ import { UserService} from "../../../services/user.service";
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  users: User[] = [];
+  user: User = new User();
+  userId: string = '';
 
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    this.getUsers();
+    this.getUser();
   }
 
-  public getUsers(){
-    this.userService.getList().subscribe(
-      (res: any) => this.users = res.map(
-        (item: any) => ({ ...item.data(), 'id': item.id})
-      ) as User[]
-    );
+  public getUser(){
+    const auth = getAuth();
+  if (auth.currentUser) {
+    this.userId = auth.currentUser.uid;
+    this.userService.getDocument(this.userId).subscribe((doc) => {
+      this.user = doc.data() as User;
+    });
+  }
   }
 }

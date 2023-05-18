@@ -17,7 +17,7 @@ export class SignUpComponent {
     this.googleService.signInWithGoogle();
   }
   
-  signUp(emailPass: string, userName: string, passwordPass: string, confirmPasswordPass: string): void{
+  signUp(emailPass: string, userName: string, userLastName: string, userBirth: string, passwordPass: string, confirmPasswordPass: string): void{
     if (!this.checkPasswordMatch(passwordPass, confirmPasswordPass)) {
       alert('Passwords do not match!');
       return;
@@ -36,6 +36,8 @@ export class SignUpComponent {
         const userId = value.user.uid;
         const userData = {
           name: userName,
+          last_name: userLastName,
+          birth_date: userBirth,
           email: emailPass,
           films_to_watch_list: [],
           films_watched_list: [],

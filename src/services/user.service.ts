@@ -36,6 +36,8 @@ export class UserService {
     return updateDoc( doc(this.firestore, `${this.collection}/${id}`), {
         id: item.id,
         name: item.name,
+        last_name: item.last_name,
+        birth_date: item.birth_date,
         email: item.email,
         image: item.image,
         films_to_watch_list: item.films_to_watch_list,

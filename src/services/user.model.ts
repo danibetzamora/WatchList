@@ -2,6 +2,8 @@
 export class User {
     id: string;
     name: string;
+    last_name: string;
+    birth_date: string;
     email: string;
     image: string;
     films_to_watch_list: string[];
