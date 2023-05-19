@@ -42,7 +42,7 @@ export class LoginComponent {
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-    alert("Email o contraseñas incorrectas");
+    //alert("Email o contraseñas incorrectas");
   });
   }
   
