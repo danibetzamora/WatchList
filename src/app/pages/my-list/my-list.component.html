@@ -1,1 +1,55 @@
-<p>my-list works!</p>
+<div class="mylist-main">
+    <div class="items-section">
+        <div class="title">
+            <h2>FILMS</h2>
+            <a routerLink="/films-list-pending">VIEW ALL</a>
+        </div>
+
+        <div class="items">
+            <ul class="items-list">
+                <li *ngFor="let film of films.slice(0, 5)">
+                    <div class="image-title">
+                        <img src="{{ film.image }}" class="item-image">
+                        <p class="item-title" [routerLink]="'/film-information/' + film.id"><b>{{ film.title }}</b></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="items-section">
+        <div class="title">
+            <h2>SERIES</h2>
+            <a routerLink="/series-list-pending">VIEW ALL</a>
+        </div>
+
+        <div class="items">
+            <ul class="items-list">
+                <li *ngFor="let series of series_list.slice(0, 5)">
+                    <div class="image-title">
+                        <img src="{{ series.image }}" class="item-image">
+                        <p class="item-title" [routerLink]="'/series-information/' + series.id"><b>{{ series.title }}</b></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="items-section">
+        <div class="title">
+            <h2>VIDEOS</h2>
+            <a routerLink="/videos-list-pending">VIEW ALL</a>
+        </div>
+
+        <div class="items">
+            <ul class="items-list">
+                <li *ngFor="let video of videos.slice(0, 5)">
+                    <div class="image-title">
+                        <img src="{{ video.image }}" class="item-image">
+                        <p class="item-title" [routerLink]="'/video-information/' + video.id"><b>{{ video.title }}</b></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

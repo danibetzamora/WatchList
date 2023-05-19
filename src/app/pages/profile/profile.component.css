@@ -1,14 +1,10 @@
 .profile-information {
-    position:absolute;
-    width: 80%;
-    left: 20%;
-    top: 0;
+    width: 100%;
     height: 100%;
-}
-
-.img-profile {
-    text-align: center;
-    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .image {
@@ -18,43 +14,57 @@
 }
 
 .info {
-    text-align: center;
-    margin-top: 5%;
+    width: 50%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 2em;
 }
 
 .data {
-    display: contents;
-    width: max-content;
-    border-color: black;
-    border-radius: 10%;
-    border-width: 10px;
+    width: 70%;
+    height: 18%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-.data input {
-    border-radius: 10px;
-    border-color: #153E76;
-    height: 20px;
-    width: max-content;
-    padding-right: 30px;
+.data > h3 {
+    text-align: center;
 }
 
-.data label {
-    display: block;
-    margin-top: 5px;
+.user-data > input {
+    width: 20em;
+    height: 2em;
+    padding: 0.5em;
+    border-radius: 4px;
+    border: 2px solid #000000;
+    pointer-events: none;
+}
+
+.user-data > input::placeholder {
+    font-size: 15px;
+}
+
+.button-password {
+    margin-top: 3em;
 }
 
 .change-passwd {
-    background: #153E76;
-    border-radius: 60px;
-    border-color: black;
-    color: white;
-    width: max-content;
-    font-size: 18px;
+    padding: 0.5em;
+    width: 10em;
+    border-radius: 4px;
+    border: none;
+    background-color: #153E76;
+    color: #FFFF;
+    font-size: 20px;
     font-weight: bold;
-    margin-top: 4%;
-    margin-bottom: 3%;
 }
 
-.change-passwd:hoverr {
+.change-passwd:hover {
     cursor: pointer;
+    background-color: #1e74ec;
 }

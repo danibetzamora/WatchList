@@ -1,1 +1,24 @@
-<p>series-list-seeing works!</p>
+<div class="series-main">
+    <div class="link-section">
+        <div class="selector-div">
+            <a class="towatch-a" routerLink="/series-list-pending">To Watch List</a>
+            <a class="watching-a" routerLink="/series-list-seeing">Watching List</a>
+            <a class="watched-a" routerLink="/series-list-view">Watched List</a>
+        </div>
+
+        <div class="filter-div">
+            <p>FILTER</p>
+        </div>
+    </div>
+
+    <div class="series-section">
+        <ul class="series-list">
+            <li *ngFor="let series of series_list">
+                <div class="item">
+                    <img src="{{ series.image }}" class="item-image">
+                    <p class="item-title" [routerLink]="'/series-information/' + series.id"><b>{{ series.title }}</b></p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -20,7 +20,7 @@ header {
 }
 
 nav {
-  height: 40%;
+  height: 60%;
 }
 
 .menu-list {
@@ -46,20 +46,18 @@ nav {
 
 button:hover {
   cursor: pointer;
-}
-
-button:hover {
   width: 100%;
   background-color: #FFFF;
   border-radius: 12px;
   color: #000000;
 }
 
-.button-browse, .button-my-list, .button-profile, .button-log-out {
+.button-browse, .button-films-lists, .button-series-lists, .button-videos-lists, .button-profile, .button-log-out {
   background: transparent;
   border: none;
   color: white;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
+  padding: 0.5em;
 }

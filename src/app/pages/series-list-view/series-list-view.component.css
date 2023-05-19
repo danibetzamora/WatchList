@@ -1,0 +1,105 @@
+.link-section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selector-div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.selector-div > a {
+    font-size: 1.5em;
+    font-weight: 600;
+    text-decoration: none;
+    border-top: 3px solid #153E76;
+    border-bottom: 3px solid #153E76;
+    border-right: 3px solid #153E76;
+    padding: 0.3em;
+}
+
+.towatch-a {
+    border-left: 3px solid #153E76;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    color: #153E76;
+    
+}
+
+.towatch-a:hover {
+    cursor: pointer;
+    color: #1e74ec;
+}
+
+.watching-a {
+    color: #153E76;
+    border-left: none;
+}
+
+.watching-a:hover {
+    cursor: pointer;
+    color: #1e74ec;
+}
+
+.watched-a {
+    background-color: #153E76;
+    color: #FFFF;
+    border-left: none;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.filter-div > p {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #153E76;
+}
+
+.series-section {
+    width: 100%;
+}
+
+.series-list {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-flow: wrap;
+    padding: 0;
+    gap: 5em;
+    margin-top: 3em;
+    margin-bottom: 2em;
+}
+
+.series-list > li {
+    width: 15%;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.item-image {
+    height: 210px;
+    width: 160px;
+    border-radius: 8px;
+}
+
+.item-title {
+    text-align: center;
+    line-height: 1.5em;
+}
+
+.item-title:hover {
+    cursor: pointer;
+    color: #0151c2;
+}

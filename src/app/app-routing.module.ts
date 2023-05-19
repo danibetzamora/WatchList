@@ -20,11 +20,12 @@ import { VideosListViewComponent } from './pages/videos-list-view/videos-list-vi
 import { FilmInformationComponent } from './pages/film-information/film-information.component';
 import { SeriesInformationComponent } from './pages/series-information/series-information.component';
 import { VideoInformationComponent } from './pages/video-information/video-information.component';
+import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 
 const routes: Routes = [
   //This is only to test without authentication implemented
   { path: '', 
-    component: HomeComponent 
+    component: LoginComponent
   },
   {
     path: 'change-password',
@@ -32,19 +33,23 @@ const routes: Routes = [
   },
   {
     path: 'films',
-    component: FilmsComponent
+    component: FilmsComponent,
+    ...canActivate(() => redirectUnauthorizedTo(['/login']))
   },
   {
     path: 'film-information/:id',
-    component: FilmInformationComponent
+    component: FilmInformationComponent,
+    ...canActivate(() => redirectUnauthorizedTo(['/login']))
   },
   {
     path: 'films-list-pending',
-    component: FilmsListPendingComponent
+    component: FilmsListPendingComponent,
+    ...canActivate(() => redirectUnauthorizedTo(['/login']))
   },
   {
     path: 'films-list-view',
-    component: FilmsListViewComponent
+    component: FilmsListViewComponent,
+    ...canActivate(() => redirectUnauthorizedTo(['/login']))
   },
   {
     path: 'forgot-password',
@@ -52,7 +57,8 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    ...canActivate(() => redirectUnauthorizedTo(['/login']))
   },
   {
     path: 'login',
@@ -60,31 +66,38 @@ const routes: Routes = [
   },
   {
     path: 'my-list',
-    component: MyListComponent
+    component: MyListComponent,
+    ...canActivate(() => redirectUnauthorizedTo(['/login']))
   },
   {
     path: 'profile',
-    component: ProfileComponent
+    component: ProfileComponent,
+    ...canActivate(() => redirectUnauthorizedTo(['/login']))
   },
   {
     path: 'series',
-    component: SeriesComponent
+    component: SeriesComponent,
+    ...canActivate(() => redirectUnauthorizedTo(['/login']))
   },
   {
     path: 'series-information/:id',
-    component: SeriesInformationComponent
+    component: SeriesInformationComponent,
+    ...canActivate(() => redirectUnauthorizedTo(['/login']))
   },
   {
     path: 'series-list-pending',
-    component: SeriesListPendingComponent
+    component: SeriesListPendingComponent,
+    ...canActivate(() => redirectUnauthorizedTo(['/login']))
   },
   {
     path: 'series-list-seeing',
-    component: SeriesListSeeingComponent
+    component: SeriesListSeeingComponent,
+    ...canActivate(() => redirectUnauthorizedTo(['/login']))
   },
   {
-    path: 'films-list-view',
-    component: SeriesListViewComponent
+    path: 'series-list-view',
+    component: SeriesListViewComponent,
+    ...canActivate(() => redirectUnauthorizedTo(['/login']))
   },
   {
     path: 'sign-up',
@@ -92,19 +105,23 @@ const routes: Routes = [
   },
   {
     path: 'videos',
-    component: VideosComponent
+    component: VideosComponent,
+    ...canActivate(() => redirectUnauthorizedTo(['/login']))
   },
   {
     path: 'video-information/:id',
-    component: VideoInformationComponent
+    component: VideoInformationComponent,
+    ...canActivate(() => redirectUnauthorizedTo(['/login']))
   },
   {
     path: 'videos-list-pending',
-    component: VideosListPendingComponent
+    component: VideosListPendingComponent,
+    ...canActivate(() => redirectUnauthorizedTo(['/login']))
   },
   {
     path: 'videos-list-view',
-    component: VideosListViewComponent
+    component: VideosListViewComponent,
+    ...canActivate(() => redirectUnauthorizedTo(['/login']))
   }
 ];
 

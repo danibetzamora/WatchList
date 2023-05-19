@@ -1,0 +1,111 @@
+.film-container {
+    min-height: 50vh;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    border: 5px solid #153E76;
+    border-radius: 8px;
+}
+
+.title-container {
+    width: 100%;
+    border-bottom: 5px solid #153E76;
+    text-align: center;
+}
+
+.main-container {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2em;
+}
+
+.information-container {
+    min-height: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.information {
+    width: 50%;
+}
+
+.information-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.information-list > li {
+    line-height: 1.5;
+}
+
+p {
+    text-align: justify;
+}
+
+.image {
+    height: 100%;
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-top: 1em;
+}
+
+/*
+.image > img {
+    width: 70%;
+    height: 80%;
+    border-radius: 5px;
+}
+*/
+
+.image > img {
+    width: 250px;
+    height: 350px;
+    border-radius: 5px;
+}
+
+
+.lists-container {
+    min-height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5em;
+}
+
+.to-watch, .watched {
+    background: transparent;
+    border: none;
+    border-radius: 10px;
+    padding: 0.5em;
+    color: white;
+    background-color: #153E76;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.to-watch:hover, .watched:hover {
+    cursor: pointer;
+    background-color: #1e74ec;
+}
+
+.active {
+    background-color: rgb(187, 10, 10);
+    color: white;
+}
+
+.active:hover {
+    cursor: pointer;
+    background-color: #ff0000;
+}
